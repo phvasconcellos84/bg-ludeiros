@@ -6,16 +6,18 @@ type LoginButtonProps = {
 };
 
 const LoginButton = ({ children }: LoginButtonProps) => {
-  const app_id = process.env.REACT_APP_LUDOPEDIA_APP_ID as string;
-  const redirect_uri = process.env.REACT_APP_LUDOPEDIA_RETURN_URL as string;
+  const app_id = import.meta.env.VITE_LUDOPEDIA_APP_ID as string;
+  const redirect_uri = import.meta.env.VITE_LUDOPEDIA_RETURN_URL as string;
   const uri = `https://ludopedia.com.br/oauth?app_id=${app_id}&redirect_uri=${redirect_uri}`;
 
   return (
-    <nav>
-      <a href={uri}>
-        <button className={styles.loginButton}>{children}</button>
-      </a>
-    </nav>
+    <>
+      <nav>
+        <a href={uri}>
+          <button className={styles.loginButton}>{children}</button>
+        </a>
+      </nav>
+    </>
   );
 };
 

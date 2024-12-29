@@ -1,9 +1,11 @@
+import { Container } from './style';
+
 const Home = () => {
   return (
-    <>
-      <h1>Home</h1>
-    </>
+    <Container>
+      <h1>Home - Página 1</h1>
+    </Container>
   );
 };
 
-export default Home();
+export default Home;
